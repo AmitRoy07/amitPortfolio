@@ -1,0 +1,68 @@
+@use './theme/sass/root' as *;
+@use './theme/sass' as *;
+
+/* Apply to All Components */
+* {
+    margin: 0;
+    padding: 0;
+    @include padding(0);
+    @include margin(0);
+    box-sizing: border-box;
+
+    font-family: var(--font_primary);
+}
+
+/* Body */
+:is(html, body, #__next) {
+    @include widthHeight(100%);
+    scroll-behavior: smooth;
+
+    /* Keeps The Body Centered in Small Screens */
+    @media (max-width: 320px) {
+        width: 320px;
+        margin: auto;
+    }
+}
+
+:is(button, input, select, option) {
+    border: none;
+    outline: none;
+}
+
+// Number Input Field Arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    appearance: textfield;
+}
+
+:is(h1, h2, h3, h4, h5, h6, p, a, th, td) {
+    // color: var(--clr_text_primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Selection */
+::selection {
+    // color: var(--clr_text_secondary);
+    // background: var(--clr_text_violet);
+    // -webkit-text-fill-color: var(--clr_text_secondary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    // border: 3px solid var(--clr_bg_primary);
+    border-radius: 100px;
+    // background: var(--clr_text_till);
+}

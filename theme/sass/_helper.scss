@@ -1,0 +1,164 @@
+// ===== Mixins & Functions =====
+
+// Convert pixel value to rem
+@function toRem($value) {
+    // 1rem = 16px
+    @return calc(1rem / 16px * $value);
+}
+
+// Scale Size According to Width
+@function scaleValue($min, $max, $type: px, $maxViewport: 1440px) {
+    $minViewport: 350px;
+
+    $viewportRange: $maxViewport - $minViewport;
+    $contentSizeRange: $max - $min;
+
+    @if $type == rem {
+        $idealSize: calc(toRem($min) + (100vw * $contentSizeRange / $viewportRange));
+        @return clamp(toRem($min), $idealSize, toRem($max));
+    } @else {
+        $idealSize: calc($min + (100vw * $contentSizeRange / $viewportRange));
+        @return clamp($min, $idealSize, $max);
+    }
+}
+
+// Gradient
+@mixin gradientText($gradient) {
+    background: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// Background
+@mixin background($bg) {
+    background: $bg;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// Width & Height
+@mixin widthHeight($width, $height: $width, $type: px) {
+    @if $height == rem {
+        width: toRem($width);
+        height: toRem($width);
+    } @else if $height == px {
+        width: $width;
+        height: $width;
+    } @else {
+        @if $type == rem {
+            width: toRem($width);
+            height: toRem($height);
+        } @else {
+            width: $width;
+            height: $height;
+        }
+    }
+}
+
+// Padding
+@mixin padding($block, $inline: $block, $type: px) {
+    @if $inline == rem {
+        padding-block: toRem($block);
+        padding-inline: toRem($block);
+    } @else if $inline == px {
+        padding-block: $block;
+        padding-inline: $block;
+    } @else {
+        @if $type == rem {
+            padding-block: toRem($block);
+            padding-inline: toRem($inline);
+        } @else {
+            padding-block: $block;
+            padding-inline: $inline;
+        }
+    }
+}
+
+// Margin
+@mixin margin($block, $inline: $block, $type: px) {
+    @if $inline == rem {
+        margin-block: toRem($block);
+        margin-inline: toRem($block);
+    } @else if $inline == px {
+        margin-block: $block;
+        margin-inline: $block;
+    } @else {
+        @if $type == rem {
+            margin-block: toRem($block);
+            margin-inline: toRem($inline);
+        } @else {
+            margin-block: $block;
+            margin-inline: $inline;
+        }
+    }
+}
+
+// Flexbox
+@mixin flex($align, $justify: $align, $dir: row) {
+    display: flex;
+
+    @if ($justify == column) {
+        align-items: $align;
+        justify-content: $align;
+        flex-direction: column;
+    } @else {
+        align-items: $align;
+        justify-content: $justify;
+        flex-direction: $dir;
+    }
+}
+
+// Grid
+@mixin grid($column, $align, $justify: $align) {
+    display: grid;
+    grid-template-columns: $column;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin gridRow($row, $align, $justify: $align) {
+    display: grid;
+    grid-template-rows: $row;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// Screen Size Breakpoint (min-width)
+// Small Mobile : Below 576px
+// Large Mobile : >= 576px
+// Tablet : >= 768px
+// Small Monitor : >= 992px
+// Medium Monitor : >= 1200px
+// Large Monitor : Above 1400px
+
+// Media Query
+@mixin min($minWidth) {
+    @media (min-width: $minWidth) {
+        @content;
+    }
+}
+
+@mixin max($maxWidth) {
+    @media (max-width: $maxWidth) {
+        @content;
+    }
+}
+
+@mixin minHeight($minHeight) {
+    @media (min-height: $minHeight) {
+        @content;
+    }
+}
+
+@mixin maxHeight($maxHeight) {
+    @media (max-height: $maxHeight) {
+        @content;
+    }
+}
+
+@mixin minMax($minWidth, $maxWidth) {
+    @media (min-width: $minWidth) and (max-width: $maxWidth) {
+        @content;
+    }
+}
