@@ -8,13 +8,15 @@
     @include padding(0);
     @include margin(0);
     box-sizing: border-box;
-
+    color: var(--clr_text_primary);
     font-family: var(--font_primary);
 }
 
 /* Body */
 :is(html, body, #__next) {
-    @include widthHeight(100%);
+    // @include widthHeight(100%);
+    width: 100vw;
+    height: 100vh;
     scroll-behavior: smooth;
 
     /* Keeps The Body Centered in Small Screens */
@@ -41,7 +43,7 @@ input[type='number'] {
 }
 
 :is(h1, h2, h3, h4, h5, h6, p, a, th, td) {
-    // color: var(--clr_text_primary);
+    color: var(--clr_text_primary);
 }
 
 a {
@@ -57,12 +59,12 @@ a {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-    // border: 3px solid var(--clr_bg_primary);
+    border: 1px solid var(--clr_border_primary);
     border-radius: 100px;
-    // background: var(--clr_text_till);
+    background: var(--clr_text_info);
 }

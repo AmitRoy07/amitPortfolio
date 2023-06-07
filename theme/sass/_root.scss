@@ -3,8 +3,8 @@
 :root {
     // ========== Color ==========
     // Text
-    --clr_text_primary: #2a3950;
-    --clr_text_secondary: #ffffff;
+    --clr_text_primary: #ffffff;
+    --clr_text_secondary: #000;
 
     --clr_text_neutral_extremeLight: #ffffff;
     --clr_text_neutral_extraLight: #ffffff;
@@ -32,9 +32,17 @@
     
 
     // Background
+    --clr_bg_primary: #ffffff;
+    --clr_bg_secondary: #000000;
+
+    --clr_bg_neutral_dark: #2a3950;
 
 
     // ========== Gradient ==========
+
+    // ========== Border ==========
+    --clr_border_primary: #ffffff;
+    --clr_border_secondary: #000000;
    
 
     // ========== Overlay ==========

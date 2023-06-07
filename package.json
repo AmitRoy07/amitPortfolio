@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "env-cmd -f .env.development next dev",
-        "build:development": "env-cmd -f .env.development next build && next-sitemap --config next-sitemap-development.config.js",
-        "build:production": "env-cmd -f .env.production next build && next-sitemap --config next-sitemap-production.config.js",
-        "start:development": "env-cmd -f .env.development next start",
-        "start:production": "env-cmd -f .env.production next start",
-        "export:development": "env-cmd -f .env.development next build && next-sitemap --config next-sitemap-development.config.js && next export",
-        "export:production": "env-cmd -f .env.production next build && next-sitemap --config next-sitemap-production.config.js && next export",
+    "build:development": "env-cmd -f .env.development next build && next-sitemap --config next-sitemap-development.config.js",
+    "build:production": "env-cmd -f .env.production next build && next-sitemap --config next-sitemap-production.config.js",
+    "start:development": "env-cmd -f .env.development next start",
+    "start:production": "env-cmd -f .env.production next start",
+    "export:development": "env-cmd -f .env.development next build && next-sitemap --config next-sitemap-development.config.js && next export",
+    "export:production": "env-cmd -f .env.production next build && next-sitemap --config next-sitemap-production.config.js && next export",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "env-cmd": "^10.1.0",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "gsap": "^3.11.5",
     "next": "13.4.4",
     "next-sitemap": "^4.1.3",
     "react": "18.2.0",

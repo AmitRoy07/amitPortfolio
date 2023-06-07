@@ -1,0 +1,10 @@
+@use 'theme/sass' as *;
+
+.header_sec{
+    width: 100px;
+    height: 100dvh;
+    position: fixed;
+    inset: 0 0;
+    background: var(--clr_text_neutral);
+    z-index: 11;
+}

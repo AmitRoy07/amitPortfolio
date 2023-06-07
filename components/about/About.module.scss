@@ -1,0 +1,24 @@
+@use 'theme/sass' as *;
+
+.about_sec {
+    overflow: hidden;
+    .inner_sec{
+        @include flex(flex-start,flex-start);
+        width: 400vw;
+        height: 100vh;
+
+    }
+    .container_width {
+        width: 100vw;
+        height: 100vh;
+        background: hsl(0, 100%, 50%);
+        flex-shrink: 0;
+
+        @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+                opacity: calc(0.2 * #{$i});
+            }
+        }
+        
+    }
+}
