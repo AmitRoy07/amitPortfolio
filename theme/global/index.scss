@@ -14,9 +14,7 @@
 
 /* Body */
 :is(html, body, #__next) {
-    // @include widthHeight(100%);
-    width: 100vw;
-    height: 100vh;
+    @include widthHeight(100%);
     scroll-behavior: smooth;
 
     /* Keeps The Body Centered in Small Screens */

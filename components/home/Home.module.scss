@@ -1,7 +1,0 @@
-@use 'theme/sass' as *;
-
-.hero_sec {
-    height: 100dvh;
-    @include flex(center);
-    background: var(--clr_bg_neutral_dark);
-}
