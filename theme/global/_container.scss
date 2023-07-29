@@ -1,9 +1,11 @@
 @use '../sass' as *;
 
-.componentWrapper {
-  
+.padding_inline {
+    padding-inline: scaleValue(24px, 24px);
+}
 
-    > .contentWrapper {
-       
-    }
+.container {
+    width: 100%;
+    max-width: $container;
+    margin-inline: auto;
 }

@@ -1,5 +1,6 @@
 @use 'theme/sass' as *;
 .footer_sec {
-    height: 100vh;
+    // height: 100vh;
+    width: 100%;
     background: var(--clr_bg_secondary);
 }
