@@ -1,1 +1,57 @@
 @use 'theme/sass' as *;
+
+.header_sec {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: fit-content;
+    z-index: 111;
+    .custom_container {
+        .inner_header {
+            width: 100%;
+            min-height: 80px;
+            @include flex(center, space-between);
+            .logo_container {
+                width: auto;
+                .logo {
+                    width: 100%;
+                    max-width: toRem(140px);
+                    @include flex(center);
+                    img {
+                        @include widthHeight(100%);
+                        object-fit: contain;
+                    }
+                }
+            }
+            .nav {
+                width: auto;
+                .nav_list {
+                    width: 100%;
+                    @include flex(center, flex-end);
+                    .nav_item {
+                        padding: 20px;
+                        font-weight: var(--Fw_medium);
+                        position: relative;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: toRem(4px);
+                            left: 0;
+                            right: 0;
+                            width: 0%;
+                            height: toRem(2px);
+                            background: var(--clr_bg_primary);
+                            transition: var(--transition);
+                            margin-inline: auto;
+                        }
+                        &:hover {
+                            &::after {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

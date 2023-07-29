@@ -1,7 +1,7 @@
-@use '../sass' as *;
+@use 'theme/sass' as *;
 
 .padding_inline {
-    padding-inline: scaleValue(24px, 24px);
+    padding-inline: scaleValue(24px, 24px, rem);
 }
 
 .container {

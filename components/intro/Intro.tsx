@@ -13,6 +13,26 @@ const Intro = () => {
                     </div>
                 </div>
             </div>
+            <div className={styles.loop}>
+                <h1>
+                    <b> AMIT ROY</b>
+                    <b>
+                        <i> UI/UX DESIGNER & DEVELOPER</i>
+                    </b>{' '}
+                </h1>
+                <h1>
+                    <b> AMIT ROY</b>
+                    <b>
+                        <i> UI/UX DESIGNER & DEVELOPER</i>
+                    </b>{' '}
+                </h1>
+                <h1>
+                    <b> AMIT ROY</b>
+                    <b>
+                        <i> UI/UX DESIGNER & DEVELOPER</i>
+                    </b>{' '}
+                </h1>
+            </div>
         </div>
     );
 };

@@ -37,8 +37,18 @@
     // ========== Overlay ==========
 
     // ========== Transitions ==========
+    --transition: all 0.3s ease-in-out;
 
     // ========== Font Family ==========
 
     --font_primary: 'DM Sans', sans-serif;
+    --font_Ubuntu: 'Ubuntu', sans-serif;
+
+    // ========== Font Weight ==========
+    --Fw_light: 300;
+    --Fw_regular: 400;
+    --Fw_medium: 500;
+    --Fw_semiBold: 600;
+    --Fw_bold: 700;
+    --Fw_black: 900;
 }
