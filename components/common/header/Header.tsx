@@ -40,6 +40,15 @@ const Header = () => {
                                 </Link>
                             ))}
                         </div>
+                        <button className={styles.app_header__switch}>
+                            <div className={styles.app_header__switch_round}></div>
+                            <div className={`${styles.app_header__switch_i} ${styles.switch_i_sun}`}>
+                                <img src={UTILITY_CONSTANT.IMAGE.COMMON.SUN} alt="sun" />
+                            </div>
+                            <div className={`${styles.app_header__switch_i} ${styles.switch_i_moon}`}>
+                                <img src={UTILITY_CONSTANT.IMAGE.COMMON.MOON} alt="moon" />
+                            </div>
+                        </button>
                     </nav>
                 </div>
             </div>

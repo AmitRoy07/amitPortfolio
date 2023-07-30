@@ -1,6 +1,46 @@
 @use 'theme/sass' as *;
 .footer_sec {
-    // height: 100vh;
     width: 100%;
-    background: var(--clr_bg_secondary);
+    .custom_container {
+        .inner_footer {
+            padding-block: scaleValue(30px, 70px, rem);
+            width: 100%;
+            .social_icon {
+                width: 100%;
+                text-align: center;
+                .title {
+                    color: var(--clr_text_secondary);
+                }
+                .icon_list {
+                    margin-block-start: toRem(30px);
+                    @include flex(center);
+                    gap: scaleValue(20px, 50px, rem);
+                    .icon {
+                        @include flex(center);
+                        cursor: pointer;
+                        color: var(--clr_text_secondary);
+                        * {
+                            color: var(--clr_text_secondary);
+                            font-size: toRem(30px);
+                        }
+                        &.FaceBook {
+                            * {
+                                font-size: toRem(28px);
+                            }
+                        }
+                        &.Linkedin {
+                            * {
+                                font-size: toRem(26px);
+                            }
+                        }
+                        &.Instagram {
+                            * {
+                                font-size: toRem(32px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

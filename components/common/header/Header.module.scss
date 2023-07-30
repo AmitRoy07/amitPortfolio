@@ -51,6 +51,14 @@
                         }
                     }
                 }
+                .app_header__switch {
+                    width: 48px;
+                    height: 24px;
+                    border-radius: 24px;
+                    transition: var(--transition);
+                    border: 0;
+                    cursor: pointer;
+                }
             }
         }
     }
