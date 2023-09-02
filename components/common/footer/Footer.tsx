@@ -2,44 +2,7 @@ import React from 'react';
 import global from 'theme/global/Global.module.scss';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
-import { BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs';
-import { FaFacebookSquare } from 'react-icons/fa';
-import { IoMdMail } from 'react-icons/io';
-import { AiFillInstagram } from 'react-icons/ai';
-import { log } from 'console';
-
-const SocialIconList = [
-    {
-        ID: 0,
-        name: 'FaceBook',
-        socialIcon: <FaFacebookSquare />,
-        url: '',
-    },
-    {
-        ID: 1,
-        name: 'Email',
-        socialIcon: <IoMdMail />,
-        url: '',
-    },
-    {
-        ID: 2,
-        name: 'Twitter',
-        socialIcon: <BsTwitter />,
-        url: '',
-    },
-    {
-        ID: 3,
-        name: 'Instagram',
-        socialIcon: <AiFillInstagram />,
-        url: '',
-    },
-    {
-        ID: 4,
-        name: 'Linkedin',
-        socialIcon: <BsLinkedin />,
-        url: '',
-    },
-];
+import { SocialIconList } from 'constants/social.constant';
 
 const Footer = () => {
     const date = new Date();
@@ -53,7 +16,12 @@ const Footer = () => {
                         <h4 className={`${styles.title} ${global.body2}`}>©{year} Amit Roy. All Rights Reserved.</h4>
                         <div className={styles.icon_list}>
                             {SocialIconList.map((item) => (
-                                <Link className={`${styles.icon} ${styles[item.name]}`} href={item.url} key={item.ID}>
+                                <Link
+                                    className={`${styles.icon} ${styles[item.name]}`}
+                                    target={item.target}
+                                    href={item.url}
+                                    key={item.ID}
+                                >
                                     {item.socialIcon}
                                 </Link>
                             ))}
